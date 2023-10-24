@@ -6,11 +6,13 @@ scoreboard objectives add golf_ball.predicted_x dummy
 scoreboard objectives add golf_ball.predicted_z dummy
 scoreboard objectives add golf_ball.cooldown dummy
 scoreboard objectives add golf_ball.right_click minecraft.used:minecraft.warped_fungus_on_a_stick
+scoreboard objectives add golf_ball.shots dummy {"text":" Shots ","color":"yellow"}
 
 scoreboard players set GolfBall load.status 1000
 scoreboard players set #enable_y_shots golf_ball.data 0
 scoreboard players set #strength_percentage golf_ball.data 50
 scoreboard players set #energy_loss_percentage golf_ball.data -90
+scoreboard players set #collision golf_ball.data 1
 
 scoreboard players set #-1 golf_ball.data -1
 scoreboard players set #2 golf_ball.data 2
@@ -35,6 +37,6 @@ data modify storage golf_ball:main GolfBall set value '[{"text":"[GolfBall]","co
 scoreboard players set #k_normal golf_ball.data 90
 scoreboard players set #k_fast golf_ball.data 95
 scoreboard players set #k_slippery golf_ball.data 98
-scoreboard players set #k_slow golf_ball.data 80
-scoreboard players set #k_very_slow golf_ball.data 70
+scoreboard players set #k_slow golf_ball.data 85
+scoreboard players set #k_very_slow golf_ball.data 80
 
