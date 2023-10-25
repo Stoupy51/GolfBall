@@ -12,6 +12,7 @@ scoreboard players set GolfBall load.status 1000
 scoreboard players set #enable_y_shots golf_ball.data 0
 scoreboard players set #strength_percentage golf_ball.data 50
 scoreboard players set #energy_loss_percentage golf_ball.data -90
+scoreboard players set #collision_multiplier golf_ball.data 50
 scoreboard players set #collision golf_ball.data 1
 
 scoreboard players set #-1 golf_ball.data -1

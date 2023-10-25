@@ -22,6 +22,12 @@ execute unless score #dx golf_ball.data matches -3..3 run scoreboard players set
 execute unless score #dz golf_ball.data matches -3..3 run scoreboard players set #big_difference golf_ball.data 1
 execute if score #big_difference golf_ball.data matches 1 run function golf_ball:ball/bounce_physics
 
+# TODO : y bounce
+
+## Collisions with players TODO
+execute if score #collision golf_ball.data matches 1 run function golf_ball:ball/collision_physics
+
+
 
 ## Get the surface
 # Surface : 0 = normal, 1 = fast, 2 = slippery, 3 = slow, 4 = very slow
