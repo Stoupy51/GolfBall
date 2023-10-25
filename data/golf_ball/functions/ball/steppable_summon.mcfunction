@@ -17,7 +17,7 @@ summon frog ~ ~ ~ {Tags:["golf_ball.base","golf_ball.new"],Invulnerable:1b,Silen
 loot replace entity @e[type=item_display,tag=golf_ball.new] container.0 loot golf_ball:player_head
 
 # Additional summoning commands
-execute as @e[type=pig,tag=golf_ball.new] at @s run function golf_ball:ball/post_summon
+execute as @e[type=frog,tag=golf_ball.new] at @s run function golf_ball:ball/post_summon
 
 # Remove the temporary tag
 tag @s remove golf_ball.temp

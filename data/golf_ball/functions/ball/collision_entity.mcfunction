@@ -4,7 +4,7 @@
 # @within			golf_ball:ball/collision_physics
 # @executed			as the collider & at the base of the ball (baby pig)
 #
-# @description		Calculate the motion to add to the ball when it collides with an entity (1500 - the distance between the ball and the entity)
+# @description		Calculate the motion to add to the ball when it collides with an entity (1200 - the distance between the ball and the entity)
 #
 
 ## Real:
@@ -17,12 +17,12 @@ scoreboard players operation #x_collider golf_ball.data -= #x golf_ball.data
 scoreboard players operation #z_collider golf_ball.data -= #z golf_ball.data
 
 # Calculate the motion to add
-scoreboard players set #one_minus_x golf_ball.data 1500
+$scoreboard players set #one_minus_x golf_ball.data $(scoreboard)
 execute if score #x_collider golf_ball.data matches 0.. run scoreboard players operation #one_minus_x golf_ball.data -= #x_collider golf_ball.data
 execute if score #x_collider golf_ball.data matches ..-1 run scoreboard players operation #one_minus_x golf_ball.data += #x_collider golf_ball.data
 execute if score #x_collider golf_ball.data matches ..-1 run scoreboard players operation #one_minus_x golf_ball.data *= #-1 golf_ball.data
 scoreboard players operation #x_motion_to_add golf_ball.data += #one_minus_x golf_ball.data
-scoreboard players set #one_minus_z golf_ball.data 1500
+$scoreboard players set #one_minus_z golf_ball.data $(scoreboard)
 execute if score #z_collider golf_ball.data matches 0.. run scoreboard players operation #one_minus_z golf_ball.data -= #z_collider golf_ball.data
 execute if score #z_collider golf_ball.data matches ..-1 run scoreboard players operation #one_minus_z golf_ball.data += #z_collider golf_ball.data
 execute if score #z_collider golf_ball.data matches ..-1 run scoreboard players operation #one_minus_z golf_ball.data *= #-1 golf_ball.data
