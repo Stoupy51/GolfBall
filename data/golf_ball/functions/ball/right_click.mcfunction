@@ -41,6 +41,10 @@ execute on vehicle run scoreboard players operation @s golf_ball.motion_x += #mo
 execute on vehicle run scoreboard players operation @s golf_ball.motion_z += #motion_z golf_ball.data
 execute if score #enable_y_shots golf_ball.data matches 1 on vehicle store result entity @s Motion[1] double 0.1 run data get storage golf_ball:main Pos[1] 0.00001
 
+# Remember the original position
+execute on vehicle run data modify storage golf_ball:main Pos set from entity @s Pos
+execute on vehicle on passengers if entity @s[type=item_display] run data modify entity @s item.tag.Pos set from storage golf_ball:main Pos
+
 # Playsound and particles
 playsound entity.arrow.shoot ambient @s
 particle cloud ~ ~ ~ 0.1 0.1 0.1 0.001 10
