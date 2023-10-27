@@ -1,8 +1,10 @@
 
 scoreboard objectives add golf_ball.data dummy
 scoreboard objectives add golf_ball.motion_x dummy
+scoreboard objectives add golf_ball.motion_y dummy
 scoreboard objectives add golf_ball.motion_z dummy
 scoreboard objectives add golf_ball.predicted_x dummy
+scoreboard objectives add golf_ball.predicted_y dummy
 scoreboard objectives add golf_ball.predicted_z dummy
 scoreboard objectives add golf_ball.cooldown dummy
 scoreboard objectives add golf_ball.right_click minecraft.used:minecraft.warped_fungus_on_a_stick
@@ -27,6 +29,7 @@ scoreboard players set #-1 golf_ball.data -1
 scoreboard players set #2 golf_ball.data 2
 scoreboard players set #90 golf_ball.data 90
 scoreboard players set #100 golf_ball.data 100
+scoreboard players set #150 golf_ball.data 150
 scoreboard players set #1000 golf_ball.data 1000
 scoreboard players set #10000 golf_ball.data 10000
 

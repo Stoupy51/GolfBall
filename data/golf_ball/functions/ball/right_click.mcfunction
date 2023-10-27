@@ -44,6 +44,7 @@ scoreboard players operation #motion_z golf_ball.data /= #100 golf_ball.data
 execute on vehicle run scoreboard players operation @s golf_ball.motion_x += #motion_x golf_ball.data
 execute on vehicle run scoreboard players operation @s golf_ball.motion_z += #motion_z golf_ball.data
 execute if score #do_y_shots golf_ball.data matches 1 on vehicle store result entity @s Motion[1] double 0.1 run data get storage golf_ball:main Pos[1] 0.00001
+execute if score #do_y_shots golf_ball.data matches 1 on vehicle store result score @s golf_ball.predicted_y run data get entity @s Pos[1] 1000
 
 # Remember the original position
 execute on vehicle run data modify storage golf_ball:main Pos set from entity @s Pos
