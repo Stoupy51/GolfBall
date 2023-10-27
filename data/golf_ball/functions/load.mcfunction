@@ -15,7 +15,7 @@ scoreboard players set #energy_loss_percentage golf_ball.data -90
 scoreboard players set #collision_multiplier golf_ball.data 50
 scoreboard players set #collision golf_ball.data 1
 
-data modify storage golf_ball:main parameters set value {collision_distance:{selector:"1.2",scoreboard:"1200"}}
+data modify storage golf_ball:main parameters set value {collision_distance:{selector_distance:"1.2",scoreboard:"1200"}}
 
 scoreboard players set #-1 golf_ball.data -1
 scoreboard players set #2 golf_ball.data 2

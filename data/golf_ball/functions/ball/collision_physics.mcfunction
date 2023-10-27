@@ -16,7 +16,8 @@ scoreboard players set #x_motion_to_add golf_ball.data 0
 scoreboard players set #z_motion_to_add golf_ball.data 0
 
 # For each entity that collides with the ball, add (max_distance - the distance between the ball and the entity) to the motion to add
-$execute as @e[distance=0.01..$(selector),type=!item,type=!marker,type=!armor_stand,predicate=!golf_ball:has_vehicle] run function golf_ball:ball/collision_entity {scoreboard:"$(scoreboard)"}
+$execute as @e[distance=0.01..$(selector_distance),type=!#golf_ball:no_collision,predicate=!golf_ball:has_vehicle] run function golf_ball:ball/collision_entity {scoreboard:"$(scoreboard)"}
+$execute as @e[distance=0.01..$(selector_distance),type=player,gamemode=!spectator,predicate=!golf_ball:has_vehicle] run function golf_ball:ball/collision_entity {scoreboard:"$(scoreboard)"}
 
 # Verbose
 #execute unless score #x_motion_to_add golf_ball.data matches 0 unless score #z_motion_to_add golf_ball.data matches 0 run tellraw @a [{"text":"motion_to_add : (","color":"aqua"},{"score":{"name":"#x_motion_to_add","objective":"golf_ball.data"},"color":"yellow"},{"text":", "},{"score":{"name":"#z_motion_to_add","objective":"golf_ball.data"},"color":"yellow"},{"text":")"}]

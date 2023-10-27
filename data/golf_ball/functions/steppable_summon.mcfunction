@@ -1,5 +1,5 @@
 
-#> golf_ball:ball/steppable_summon
+#> golf_ball:steppable_summon
 #
 # @within			nothing
 # @executed			as & at the player who summoned the ball

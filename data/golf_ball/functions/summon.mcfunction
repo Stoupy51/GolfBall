@@ -1,5 +1,5 @@
 
-#> golf_ball:ball/summon
+#> golf_ball:summon
 #
 # @within			nothing
 # @executed			as & at the player who summoned the ball
