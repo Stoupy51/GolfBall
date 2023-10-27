@@ -8,12 +8,18 @@ scoreboard objectives add golf_ball.cooldown dummy
 scoreboard objectives add golf_ball.right_click minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add golf_ball.shots dummy {"text":" Shots ","color":"yellow"}
 
+scoreboard objectives add golf_ball.do_y_shots dummy
+scoreboard objectives add golf_ball.strength_percentage dummy
+scoreboard objectives add golf_ball.energy_loss_percentage dummy
+scoreboard objectives add golf_ball.collision_multiplier dummy
+scoreboard objectives add golf_ball.do_collision dummy
+
 scoreboard players set GolfBall load.status 1000
-scoreboard players set #enable_y_shots golf_ball.data 0
-scoreboard players set #strength_percentage golf_ball.data 50
-scoreboard players set #energy_loss_percentage golf_ball.data -90
-scoreboard players set #collision_multiplier golf_ball.data 50
-scoreboard players set #collision golf_ball.data 1
+scoreboard players set #default_do_y_shots golf_ball.data 0
+scoreboard players set #default_strength_percentage golf_ball.data 50
+scoreboard players set #default_energy_loss_percentage golf_ball.data -90
+scoreboard players set #default_collision_multiplier golf_ball.data 50
+scoreboard players set #default_do_collision golf_ball.data 1
 
 data modify storage golf_ball:main parameters set value {collision_distance:{selector_distance:"1.2",scoreboard:"1200"}}
 

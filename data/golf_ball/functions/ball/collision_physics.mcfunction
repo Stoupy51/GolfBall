@@ -23,8 +23,8 @@ $execute as @e[distance=0.01..$(selector_distance),type=player,gamemode=!spectat
 #execute unless score #x_motion_to_add golf_ball.data matches 0 unless score #z_motion_to_add golf_ball.data matches 0 run tellraw @a [{"text":"motion_to_add : (","color":"aqua"},{"score":{"name":"#x_motion_to_add","objective":"golf_ball.data"},"color":"yellow"},{"text":", "},{"score":{"name":"#z_motion_to_add","objective":"golf_ball.data"},"color":"yellow"},{"text":")"}]
 
 # Add the motion to the ball
-scoreboard players operation #x_motion_to_add golf_ball.data *= #collision_multiplier golf_ball.data
-scoreboard players operation #z_motion_to_add golf_ball.data *= #collision_multiplier golf_ball.data
+scoreboard players operation #x_motion_to_add golf_ball.data *= @s golf_ball.collision_multiplier
+scoreboard players operation #z_motion_to_add golf_ball.data *= @s golf_ball.collision_multiplier
 scoreboard players operation @s golf_ball.motion_x -= #x_motion_to_add golf_ball.data
 scoreboard players operation @s golf_ball.motion_z -= #z_motion_to_add golf_ball.data
 

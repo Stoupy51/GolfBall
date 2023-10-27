@@ -22,3 +22,10 @@ ride @p[tag=golf_ball.temp] mount @s
 execute run data modify storage golf_ball:main Pos set from entity @s Pos
 execute on passengers if entity @s[type=item_display] run data modify entity @s item.tag.Pos set from storage golf_ball:main Pos
 
+# Apply default values
+scoreboard players operation @s golf_ball.do_y_shots = #default_do_y_shots golf_ball.data
+scoreboard players operation @s golf_ball.strength_percentage = #default_strength_percentage golf_ball.data
+scoreboard players operation @s golf_ball.energy_loss_percentage = #default_energy_loss_percentage golf_ball.data
+scoreboard players operation @s golf_ball.collision_multiplier = #default_collision_multiplier golf_ball.data
+scoreboard players operation @s golf_ball.do_collision = #default_do_collision golf_ball.data
+

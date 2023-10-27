@@ -23,9 +23,9 @@ execute if score #abs_dx golf_ball.data matches ..-1 run scoreboard players oper
 execute if score #abs_dz golf_ball.data matches ..-1 run scoreboard players operation #abs_dz golf_ball.data *= #-1 golf_ball.data
 
 # Bounce the ball
-execute if score #abs_dx golf_ball.data >= #abs_dz golf_ball.data run scoreboard players operation @s golf_ball.motion_x *= #energy_loss_percentage golf_ball.data
+execute if score #abs_dx golf_ball.data >= #abs_dz golf_ball.data run scoreboard players operation @s golf_ball.motion_x *= @s golf_ball.energy_loss_percentage
 execute if score #abs_dx golf_ball.data >= #abs_dz golf_ball.data run scoreboard players operation @s golf_ball.motion_x /= #100 golf_ball.data
-execute if score #abs_dx golf_ball.data < #abs_dz golf_ball.data run scoreboard players operation @s golf_ball.motion_z *= #energy_loss_percentage golf_ball.data
+execute if score #abs_dx golf_ball.data < #abs_dz golf_ball.data run scoreboard players operation @s golf_ball.motion_z *= @s golf_ball.energy_loss_percentage
 execute if score #abs_dx golf_ball.data < #abs_dz golf_ball.data run scoreboard players operation @s golf_ball.motion_z /= #100 golf_ball.data
 
 # Particles

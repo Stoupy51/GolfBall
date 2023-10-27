@@ -25,7 +25,7 @@ execute if score #big_difference golf_ball.data matches 1 run function golf_ball
 # TODO : y bounce
 
 ## Collisions with players TODO
-execute if score #collision golf_ball.data matches 1 run function golf_ball:ball/collision_physics with storage golf_ball:main parameters.collision_distance
+execute if score @s golf_ball.do_collision matches 1 run function golf_ball:ball/collision_physics with storage golf_ball:main parameters.collision_distance
 
 
 
