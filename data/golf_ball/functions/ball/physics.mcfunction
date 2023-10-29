@@ -26,6 +26,7 @@ execute if score #big_difference golf_ball.data matches 1 run function golf_ball
 # Height bounce
 scoreboard players operation #dy golf_ball.data = #pos_y golf_ball.data
 scoreboard players operation #dy golf_ball.data -= @s golf_ball.predicted_y
+execute positioned ~ ~-.5 ~ if predicate golf_ball:in_water run scoreboard players set #dy golf_ball.data 0
 execute unless score #dy golf_ball.data matches -3..3 run scoreboard players operation #my golf_ball.data = @s golf_ball.motion_y
 execute unless score #dy golf_ball.data matches -3..3 run scoreboard players operation #my golf_ball.data *= @s golf_ball.energy_loss_percentage
 execute unless score #dy golf_ball.data matches -3..3 run scoreboard players operation #my golf_ball.data /= #150 golf_ball.data
