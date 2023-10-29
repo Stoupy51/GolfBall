@@ -7,7 +7,8 @@
 # @description		Exit the player and kill the ball
 #
 
-# Remove barrier block and invisibility
+# Remove barrier block, warped fungus and invisibility
+item replace entity @s weapon.offhand with air
 item replace entity @s hotbar.8 with air
 effect clear @s invisibility
 
@@ -17,4 +18,5 @@ execute on vehicle run kill @s
 
 # Dismount the ball
 ride @s dismount
+tp @s ~ ~ ~
 

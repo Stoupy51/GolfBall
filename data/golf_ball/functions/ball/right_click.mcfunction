@@ -47,8 +47,8 @@ execute if score #do_y_shots golf_ball.data matches 1 on vehicle store result en
 execute if score #do_y_shots golf_ball.data matches 1 on vehicle store result score @s golf_ball.predicted_y run data get entity @s Pos[1] 1000
 
 # Remember the original position
-execute on vehicle run data modify storage golf_ball:main Pos set from entity @s Pos
-execute on vehicle on passengers if entity @s[type=item_display] run data modify entity @s item.tag.Pos set from storage golf_ball:main Pos
+execute on vehicle at @s unless block ~ ~-.1 ~ air run data modify storage golf_ball:main Pos set from entity @s Pos
+execute on vehicle at @s unless block ~ ~-.1 ~ air on passengers if entity @s[type=item_display] run data modify entity @s item.tag.Pos set from storage golf_ball:main Pos
 
 # Playsound and particles
 playsound entity.arrow.shoot ambient @s
