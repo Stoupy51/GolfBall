@@ -38,11 +38,12 @@ execute if score @s golf_ball.do_collision matches 1 run function golf_ball:ball
 
 
 ## Get the surface
-# Surface : 0 = normal, 1 = fast, 2 = slippery, 3 = slow, 4 = very slow
+# Surface : 0 = normal, 1 = fast, 2 = slippery, 3 = slow, 4 = very slow, in the air = slippery
 # When in air : surface = 0
 scoreboard players set #surface golf_ball.data 0
 execute if block ~ ~-.1 ~ #golf_ball:surfaces/fast run scoreboard players set #surface golf_ball.data 1
 execute if block ~ ~-.1 ~ #golf_ball:surfaces/slippery run scoreboard players set #surface golf_ball.data 2
+execute if block ~ ~-.1 ~ air run scoreboard players set #surface golf_ball.data 2
 execute if block ~ ~-.1 ~ #golf_ball:surfaces/slow run scoreboard players set #surface golf_ball.data 3
 execute if block ~ ~-.1 ~ #golf_ball:surfaces/very_slow run scoreboard players set #surface golf_ball.data 4
 execute if entity @s[tag=golf_ball.no_grip] run scoreboard players set #surface golf_ball.data 2
