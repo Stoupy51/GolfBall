@@ -8,7 +8,7 @@
 #
 
 # Get position
-execute on vehicle on passengers if entity @s[type=item_display] run data modify storage golf_ball:main Pos set from entity @s item.tag.Pos
+execute on vehicle on passengers if entity @s[type=item_display] run data modify storage golf_ball:main Pos set from entity @s item.components."minecraft:custom_data".Pos
 
 # Apply position and remove motion
 execute on vehicle run data modify entity @s Pos set from storage golf_ball:main Pos

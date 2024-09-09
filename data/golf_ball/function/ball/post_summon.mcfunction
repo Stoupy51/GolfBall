@@ -18,9 +18,12 @@ effect give @s resistance infinite 255 true
 # Make the player ride the ball
 ride @p[tag=golf_ball.temp] mount @s
 
+# Scale attribut to minimum
+attribute @s generic.scale base set 0.0
+
 # Remember pos
-execute run data modify storage golf_ball:main Pos set from entity @s Pos
-execute on passengers if entity @s[type=item_display] run data modify entity @s item.tag.Pos set from storage golf_ball:main Pos
+data modify storage golf_ball:main Pos set from entity @s Pos
+execute on passengers if entity @s[type=item_display] run data modify entity @s item.components."minecraft:custom_data".Pos set from storage golf_ball:main Pos
 
 # Apply default values
 scoreboard players operation @s golf_ball.do_y_shots = #default_do_y_shots golf_ball.data

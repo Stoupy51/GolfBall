@@ -7,6 +7,9 @@
 # @description		Exit the player and kill the ball
 #
 
+# Advancement revoke
+advancement revoke @s only golf_ball:exit_player
+
 # Remove barrier block, warped fungus and invisibility
 item replace entity @s weapon.offhand with air
 item replace entity @s hotbar.8 with air

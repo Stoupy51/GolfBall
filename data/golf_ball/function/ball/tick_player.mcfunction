@@ -10,12 +10,13 @@
 # Invisibility effect
 effect give @s invisibility 1 9 true
 
-# Right click detection
-execute unless data entity @s Inventory[-1].tag.golf_ball run item replace entity @s weapon.offhand with warped_fungus_on_a_stick{CustomModelData:2010003,Unbreakable:1b,golf_ball:1b}
-execute unless data entity @s Inventory[{Slot:8b}].tag.golf_ball run item replace entity @s hotbar.8 with barrier{golf_ball:1b,display:{Name:'{"text":"Sortir de la balle","color":"red","italic":false}'}}
-execute if score @s golf_ball.right_click matches 1.. if data entity @s {SelectedItemSlot:8} run function golf_ball:ball/exit_player
-execute if score @s golf_ball.right_click matches 1.. unless score @s golf_ball.cooldown matches 1.. unless data entity @s {SelectedItemSlot:8} at @s run function golf_ball:ball/right_click
-scoreboard players reset @s golf_ball.right_click
+# Items for right click detection
+execute unless data entity @s Inventory[-1].components."minecraft:custom_data".golf_ball run item replace entity @s weapon.offhand with bread[custom_model_data=2010000,custom_data={golf_ball:1b},food={nutrition:0,saturation:0,eat_seconds:1000000,can_always_eat:true}]
+execute unless data entity @s Inventory[{Slot:8b}].components."minecraft:custom_data".exit_golf_ball run item replace entity @s hotbar.8 with barrier[custom_data={exit_golf_ball:1b},food={nutrition:0,saturation:0,can_always_eat:true},item_name='{"text":"Abandon","color":"red","italic":false}']
+
+# Right click detection score (when the player stops right clicking)
+execute if score @s golf_ball.right_click matches 1.. run scoreboard players remove @s golf_ball.right_click 1
+execute if score @s golf_ball.right_click matches 0 run function golf_ball:right_click/released
 
 # Cooldown actionbar
 execute if score @s golf_ball.cooldown matches 01..02 run title @s actionbar {"text":"|=========================|","color":"gray"}
