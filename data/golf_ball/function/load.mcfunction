@@ -12,6 +12,8 @@ scoreboard objectives add golf_ball.predicted_z dummy
 scoreboard objectives add golf_ball.cooldown dummy
 scoreboard objectives add golf_ball.right_click dummy
 scoreboard objectives add golf_ball.shots dummy {"text":" Shots ","color":"yellow"}
+scoreboard objectives add golf_ball.power dummy
+scoreboard objectives add golf_ball.power_direction dummy
 
 scoreboard objectives add golf_ball.do_y_shots dummy
 scoreboard objectives add golf_ball.strength_percentage dummy
@@ -39,8 +41,7 @@ scoreboard players set #10000 golf_ball.data 10000
 # Back and Forth power constants
 scoreboard players set #min_power golf_ball.data 40
 scoreboard players set #max_power golf_ball.data 500
-scoreboard players operation #power golf_ball.data = #min_power golf_ball.data
-scoreboard players set #direction golf_ball.data 1
+scoreboard players set #direction_power golf_ball.data 1
 
 #define storage golf_ball:main
 #define storage golf_ball:temp
