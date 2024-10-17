@@ -7,9 +7,10 @@
 # @description		Manage the summoning of a golf ball
 #
 
-# Remove new tag
+# Remove new tag and increase the count of golf balls
 tag @s remove golf_ball.new
 execute on passengers run tag @s remove golf_ball.new
+scoreboard players add #total_balls golf_ball.data 1
 
 # Effects
 effect give @s slowness infinite 255 true
@@ -27,6 +28,12 @@ data modify storage golf_ball:main Pos set from entity @s Pos
 execute on passengers if entity @s[type=item_display] run data modify entity @s item.components."minecraft:custom_data".Pos set from storage golf_ball:main Pos
 
 # Apply default values
+scoreboard players operation @s golf_ball.friction_normal = #k_normal golf_ball.data
+scoreboard players operation @s golf_ball.friction_fast = #k_fast golf_ball.data
+scoreboard players operation @s golf_ball.friction_slippery = #k_slippery golf_ball.data
+scoreboard players operation @s golf_ball.friction_slow = #k_slow golf_ball.data
+scoreboard players operation @s golf_ball.friction_very_slow = #k_very_slow golf_ball.data
+
 scoreboard players operation @s golf_ball.do_y_shots = #default_do_y_shots golf_ball.data
 scoreboard players operation @s golf_ball.strength_percentage = #default_strength_percentage golf_ball.data
 scoreboard players operation @s golf_ball.energy_loss_percentage = #default_energy_loss_percentage golf_ball.data

@@ -15,12 +15,21 @@ scoreboard objectives add golf_ball.shots dummy {"text":" Shots ","color":"yello
 scoreboard objectives add golf_ball.power dummy
 scoreboard objectives add golf_ball.power_direction dummy
 
+# Friction scores
+scoreboard objectives add golf_ball.friction_normal dummy
+scoreboard objectives add golf_ball.friction_fast dummy
+scoreboard objectives add golf_ball.friction_slippery dummy
+scoreboard objectives add golf_ball.friction_slow dummy
+scoreboard objectives add golf_ball.friction_very_slow dummy
+
+# Misc scores
 scoreboard objectives add golf_ball.do_y_shots dummy
 scoreboard objectives add golf_ball.strength_percentage dummy
 scoreboard objectives add golf_ball.energy_loss_percentage dummy
 scoreboard objectives add golf_ball.collision_multiplier dummy
 scoreboard objectives add golf_ball.do_collision dummy
 
+# Load status and default values
 scoreboard players set GolfBall load.status 1100
 scoreboard players set #default_do_y_shots golf_ball.data 0
 scoreboard players set #default_strength_percentage golf_ball.data 50
@@ -42,6 +51,9 @@ scoreboard players set #10000 golf_ball.data 10000
 scoreboard players set #min_power golf_ball.data 40
 scoreboard players set #max_power golf_ball.data 500
 scoreboard players set #direction_power golf_ball.data 1
+
+# Count the number of balls
+execute store result score #total_balls golf_ball.data if entity @e[tag=golf_ball.display]
 
 #define storage golf_ball:main
 #define storage golf_ball:temp

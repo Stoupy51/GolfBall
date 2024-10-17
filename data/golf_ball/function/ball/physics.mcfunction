@@ -51,11 +51,11 @@ execute if entity @s[tag=golf_ball.no_grip] run scoreboard players set #surface 
 
 ## Calculate the motion depending on the surface
 # Motion X
-execute if score #surface golf_ball.data matches 0 run scoreboard players operation @s golf_ball.motion_x *= #k_normal golf_ball.data
-execute if score #surface golf_ball.data matches 1 run scoreboard players operation @s golf_ball.motion_x *= #k_fast golf_ball.data
-execute if score #surface golf_ball.data matches 2 run scoreboard players operation @s golf_ball.motion_x *= #k_slippery golf_ball.data
-execute if score #surface golf_ball.data matches 3 run scoreboard players operation @s golf_ball.motion_x *= #k_slow golf_ball.data
-execute if score #surface golf_ball.data matches 4 run scoreboard players operation @s golf_ball.motion_x *= #k_very_slow golf_ball.data
+execute if score #surface golf_ball.data matches 0 run scoreboard players operation @s golf_ball.motion_x *= @s golf_ball.friction_normal
+execute if score #surface golf_ball.data matches 1 run scoreboard players operation @s golf_ball.motion_x *= @s golf_ball.friction_fast
+execute if score #surface golf_ball.data matches 2 run scoreboard players operation @s golf_ball.motion_x *= @s golf_ball.friction_slippery
+execute if score #surface golf_ball.data matches 3 run scoreboard players operation @s golf_ball.motion_x *= @s golf_ball.friction_slow
+execute if score #surface golf_ball.data matches 4 run scoreboard players operation @s golf_ball.motion_x *= @s golf_ball.friction_very_slow
 scoreboard players operation @s golf_ball.motion_x /= #100 golf_ball.data
 execute store result entity @s Motion[0] double 0.000001 run scoreboard players get @s golf_ball.motion_x
 
@@ -65,11 +65,11 @@ scoreboard players operation @s golf_ball.motion_y = #my golf_ball.data
 
 
 # Motion Z
-execute if score #surface golf_ball.data matches 0 run scoreboard players operation @s golf_ball.motion_z *= #k_normal golf_ball.data
-execute if score #surface golf_ball.data matches 1 run scoreboard players operation @s golf_ball.motion_z *= #k_fast golf_ball.data
-execute if score #surface golf_ball.data matches 2 run scoreboard players operation @s golf_ball.motion_z *= #k_slippery golf_ball.data
-execute if score #surface golf_ball.data matches 3 run scoreboard players operation @s golf_ball.motion_z *= #k_slow golf_ball.data
-execute if score #surface golf_ball.data matches 4 run scoreboard players operation @s golf_ball.motion_z *= #k_very_slow golf_ball.data
+execute if score #surface golf_ball.data matches 0 run scoreboard players operation @s golf_ball.motion_z *= @s golf_ball.friction_normal
+execute if score #surface golf_ball.data matches 1 run scoreboard players operation @s golf_ball.motion_z *= @s golf_ball.friction_fast
+execute if score #surface golf_ball.data matches 2 run scoreboard players operation @s golf_ball.motion_z *= @s golf_ball.friction_slippery
+execute if score #surface golf_ball.data matches 3 run scoreboard players operation @s golf_ball.motion_z *= @s golf_ball.friction_slow
+execute if score #surface golf_ball.data matches 4 run scoreboard players operation @s golf_ball.motion_z *= @s golf_ball.friction_very_slow
 scoreboard players operation @s golf_ball.motion_z /= #100 golf_ball.data
 execute store result entity @s Motion[2] double 0.000001 run scoreboard players get @s golf_ball.motion_z
 
