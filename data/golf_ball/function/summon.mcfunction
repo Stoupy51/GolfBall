@@ -22,3 +22,6 @@ execute as @e[type=cat,tag=golf_ball.new] at @s run function golf_ball:ball/post
 # Remove the temporary tag
 tag @s remove golf_ball.temp
 
+# Execute the first player tick
+function golf_ball:ball/tick_player
+

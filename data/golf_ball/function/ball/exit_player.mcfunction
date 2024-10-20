@@ -10,16 +10,17 @@
 # Advancement revoke
 advancement revoke @s only golf_ball:exit_player
 
-# Remove barrier block, warped fungus and invisibility
-item replace entity @s weapon.offhand with air
-item replace entity @s hotbar.8 with air
+# Remove custom items and invisibility
+clear @s *[custom_data~{golf_ball:1b}]
+clear @s *[custom_data~{exit_golf_ball:1b}]
 effect clear @s invisibility
 
 # Remove the ball
 execute on vehicle run tag @s add golf_ball.dead
+execute on vehicle on passengers run kill @s[type=!player]
 execute on vehicle run kill @s
 
 # Dismount the ball
 ride @s dismount
-tp @s ~ ~ ~
+tp @s ~ ~1 ~
 

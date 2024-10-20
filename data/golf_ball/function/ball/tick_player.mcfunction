@@ -12,7 +12,8 @@ effect give @s invisibility 1 9 true
 
 # Items for right click detection
 execute unless data entity @s Inventory[-1].components."minecraft:custom_data".golf_ball run item replace entity @s weapon.offhand with bread[custom_model_data=2010000,custom_data={golf_ball:1b},food={nutrition:0,saturation:0,eat_seconds:1000000,can_always_eat:true}]
-execute unless data entity @s Inventory[{Slot:8b}].components."minecraft:custom_data".exit_golf_ball run item replace entity @s hotbar.8 with barrier[custom_data={exit_golf_ball:1b},food={nutrition:0,saturation:0,can_always_eat:true},item_name='{"text":"Abandon","color":"red","italic":false}']
+execute unless data entity @s Inventory[].components."minecraft:custom_data".exit_golf_ball if data entity @s Inventory[{Slot:8b}] run item replace entity @s hotbar.7 with barrier[custom_data={exit_golf_ball:1b},food={nutrition:0,saturation:0,can_always_eat:true},item_name='{"text":"Abandon","color":"red","italic":false}',attribute_modifiers=[{"id":"golf_ball:block_interaction_range","type":"player.block_interaction_range",amount:-1024,operation:"add_value",slot:"any"}]]
+execute unless data entity @s Inventory[].components."minecraft:custom_data".exit_golf_ball run item replace entity @s hotbar.8 with barrier[custom_data={exit_golf_ball:1b},food={nutrition:0,saturation:0,can_always_eat:true},item_name='{"text":"Abandon","color":"red","italic":false}',attribute_modifiers=[{"id":"golf_ball:block_interaction_range","type":"player.block_interaction_range",amount:-1024,operation:"add_value",slot:"any"}]]
 
 # Right click detection score (when the player stops right clicking)
 execute if score @s golf_ball.right_click matches 1.. run scoreboard players remove @s golf_ball.right_click 1

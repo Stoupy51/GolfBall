@@ -1,3 +1,3 @@
 
-$execute on vehicle run ride $(Name) mount @s
+$execute on vehicle run ride $(name) mount @s
 

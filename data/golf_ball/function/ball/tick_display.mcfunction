@@ -12,7 +12,7 @@ scoreboard players set #alive golf_ball.data 0
 execute on vehicle if entity @s[tag=!golf_ball.dead] run scoreboard players set #alive golf_ball.data 1
 
 # Force player to be on the ball
-function golf_ball:ball/ride_vehicle_macro with entity @s item.components."minecraft:profile".name
+execute if score #alive golf_ball.data matches 1 run function golf_ball:ball/ride_vehicle_macro with entity @s item.components."minecraft:profile"
 
 # If the base is dead, kill the ball
 execute if score #alive golf_ball.data matches 0 run scoreboard players remove #total_balls golf_ball.data 1
