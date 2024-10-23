@@ -30,7 +30,7 @@ scoreboard objectives add golf_ball.collision_multiplier dummy
 scoreboard objectives add golf_ball.do_collision dummy
 
 # Load status and default values
-scoreboard players set GolfBall load.status 1100
+scoreboard players set GolfBall load.status 1300
 scoreboard players set #default_do_y_shots golf_ball.data 0
 scoreboard players set #default_strength_percentage golf_ball.data 50
 scoreboard players set #default_energy_loss_percentage golf_ball.data -90
@@ -53,7 +53,7 @@ scoreboard players set #max_power golf_ball.data 500
 scoreboard players set #direction_power golf_ball.data 1
 
 # Count the number of balls
-execute store result score #total_balls golf_ball.data if entity @e[tag=golf_ball.display]
+execute store result score #total_balls golf_ball.data if entity @e[type=item_display,tag=golf_ball.display]
 
 #define storage golf_ball:main
 #define storage golf_ball:temp

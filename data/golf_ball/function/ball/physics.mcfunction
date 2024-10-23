@@ -33,7 +33,7 @@ execute unless score #dy golf_ball.data matches -3..3 run scoreboard players ope
 execute unless score #dy golf_ball.data matches -3..3 unless score #my golf_ball.data matches -10..300 store result entity @s Motion[1] double 0.001 run scoreboard players get #my golf_ball.data
 #tellraw @a [{"text":"dy: "},{"score":{"name":"#dy","objective":"golf_ball.data"}}," - ",{"score":{"name":"#my","objective":"golf_ball.data"}}]
 
-## Collisions with players
+## Collisions with entities
 execute if score @s golf_ball.do_collision matches 1 run function golf_ball:ball/collision_physics with storage golf_ball:main parameters.collision_distance
 
 
