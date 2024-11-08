@@ -20,8 +20,8 @@ effect give @s resistance infinite 255 true
 ride @p[tag=golf_ball.temp] mount @s
 
 # Scale attribut to minimum
-attribute @s generic.scale base set 0.0
-attribute @s generic.jump_strength base set 0.0
+attribute @s scale base set 0.0
+attribute @s jump_strength base set 0.0
 
 # Remember pos
 data modify storage golf_ball:main Pos set from entity @s Pos
