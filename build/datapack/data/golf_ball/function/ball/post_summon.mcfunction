@@ -45,3 +45,13 @@ scoreboard players operation @s golf_ball.energy_loss_percentage = #default_ener
 scoreboard players operation @s golf_ball.collision_multiplier = #default_collision_multiplier golf_ball.data
 scoreboard players operation @s golf_ball.do_collision = #default_do_collision golf_ball.data
 
+# Add conventions tags
+tag @s add smithed.entity
+tag @s add smithed.strict
+tag @s add global.ignore
+tag @s add global.ignore.kill
+execute on passengers if entity @s[type=item_display] run tag @s add smithed.entity
+execute on passengers if entity @s[type=item_display] run tag @s add smithed.strict
+execute on passengers if entity @s[type=item_display] run tag @s add global.ignore
+execute on passengers if entity @s[type=item_display] run tag @s add global.ignore.kill
+
