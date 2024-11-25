@@ -1,0 +1,18 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:consume_item",
+			"conditions": {
+				"item": {
+					"predicates": {
+						"minecraft:custom_data": "{exit_golf_ball:1b}"
+					}
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "golf_ball:ball/exit_player"
+	}
+}
+

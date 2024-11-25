@@ -1,0 +1,18 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:using_item",
+			"conditions": {
+				"item": {
+					"predicates": {
+						"minecraft:custom_data": "{golf_ball:1b}"
+					}
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "golf_ball:right_click/advancement"
+	}
+}
+
