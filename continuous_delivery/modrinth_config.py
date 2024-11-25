@@ -3,9 +3,7 @@
 from config import *
 
 # Constants
-SUMMARY: str = """
-More Apples is a simple data pack that modifies all leaves loot tables to add twice as many apples as vanilla oak leaves.
-"""
+SUMMARY: str = "Transform into a golf ball in Minecraft and experience realistic and configurable golfing physics!"
 
 DESCRIPTION_MARKDOWN: str = ""
 if os.path.exists(f"{ROOT}/README.md"):
@@ -22,7 +20,7 @@ VERSION_TYPE: str = "release"
 
 # Configuration
 modrinth_config: dict = {
-	"slug": "more-apples",
+	"slug": NAMESPACE,
 	"project_name": PROJECT_NAME,
 	"version": VERSION,
 	"summary": SUMMARY,

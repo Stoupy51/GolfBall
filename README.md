@@ -5,6 +5,8 @@
 [![Modrinth](https://img.shields.io/modrinth/dt/golf_ball?logo=modrinth&label=Modrinth)](https://modrinth.com/datapack/golf_ball)
 [![Discord](https://img.shields.io/discord/1216400498488377467?label=Discord&logo=discord)](https://discord.gg/anxzu6rA9F)
 
+📺 Old datapack showcase: https://www.youtube.com/watch?v=TqVvRwF2psQ
+
 🏌️ Golf Ball is a datapack that transforms you into a golf ball in Minecraft, offering an immersive golfing experience!<br>
 ⛳ The following two commands are your best friends:
 - 🎮 `/function golf_ball:summon`: Turns the player executing the command into a golf ball (e.g: `/execute as <player> positioned 123 100 54 run function golf_ball:summon`)

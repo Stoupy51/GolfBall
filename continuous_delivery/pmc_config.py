@@ -3,7 +3,7 @@
 from config import *
 
 # Constants
-PMC_URL: str = "https://www.planetminecraft.com/account/manage/data-packs/5645797/"
+PMC_URL: str = "https://www.planetminecraft.com/account/manage/data-packs/6470618/"
 
 # Configuration
 pmc_config: dict = {
