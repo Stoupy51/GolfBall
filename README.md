@@ -47,6 +47,6 @@ Control how the ball behaves on different surfaces by adjusting friction values.
 - 🎯 For local commands targeting a specific ball, use this format: `/execute as <player> on vehicle run scoreboard players set @s golf_ball.strength_percentage <value>`
 - 🎮 The "@s" selector refers to the golf ball currently being controlled by the player
 - ⚡ Surface friction values dramatically affect ball behavior - experiment to find the perfect settings!
-- 📁 View all available surface definitions in the [surfaces.json](https://github.com/Stoupy51/GolfBall/blob/main/build/datapack/data/golf_ball/tags/block/surfaces.json) file
+- 📁 View all available surface definitions in the [surfaces json](https://github.com/Stoupy51/GolfBall/blob/main/build/datapack/data/golf_ball/tags/block/surfaces) files
 - ⚠️ You may have fun with unrealistic configurations, but the physics will be wonky!
 
