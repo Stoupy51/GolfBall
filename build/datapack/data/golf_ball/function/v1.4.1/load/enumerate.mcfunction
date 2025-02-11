@@ -1,5 +1,5 @@
 
-#> golf_ball:v1.4.0/load/enumerate
+#> golf_ball:v1.4.1/load/enumerate
 #
 # @within	#golf_ball:enumerate
 #
@@ -11,5 +11,5 @@ execute unless score #golf_ball.major load.status matches 1.. run scoreboard pla
 execute if score #golf_ball.major load.status matches 1 unless score #golf_ball.minor load.status matches 4.. run scoreboard players set #golf_ball.minor load.status 4
 
 # If current patch is too low, set it to the current patch (only if major and minor are correct)
-execute if score #golf_ball.major load.status matches 1 if score #golf_ball.minor load.status matches 4 unless score #golf_ball.patch load.status matches 0.. run scoreboard players set #golf_ball.patch load.status 0
+execute if score #golf_ball.major load.status matches 1 if score #golf_ball.minor load.status matches 4 unless score #golf_ball.patch load.status matches 1.. run scoreboard players set #golf_ball.patch load.status 1
 
