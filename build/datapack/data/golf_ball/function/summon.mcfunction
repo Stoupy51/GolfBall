@@ -12,6 +12,9 @@
 # @description		Manage the summoning of a golf ball
 #
 
+# Reduce player size
+attribute @s scale base set 0.5
+
 # Temporary tag for the player
 tag @s add golf_ball.temp
 

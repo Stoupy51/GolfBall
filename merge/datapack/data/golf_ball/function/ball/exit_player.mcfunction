@@ -24,3 +24,6 @@ execute on vehicle run kill @s
 ride @s dismount
 tp @s ~ ~1 ~
 
+# Restore player size
+attribute @s scale base reset
+
