@@ -23,9 +23,10 @@ ride @p[tag=golf_ball.temp] mount @s
 attribute @s scale base set 0.0
 attribute @s jump_strength base set 0.0
 
-# Remember pos
+# Remember pos, and apply interpolation
 data modify storage golf_ball:main Pos set from entity @s Pos
 execute on passengers if entity @s[type=item_display] run data modify entity @s item.components."minecraft:custom_data".Pos set from storage golf_ball:main Pos
+execute on passengers if entity @s[type=item_display] run data modify entity @s teleport_duration set value 2
 
 # Apply default values
 scoreboard players operation @s golf_ball.friction_normal = #k_normal golf_ball.data

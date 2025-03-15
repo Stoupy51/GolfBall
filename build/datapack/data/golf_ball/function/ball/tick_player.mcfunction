@@ -17,9 +17,9 @@
 effect give @s invisibility 1 9 true
 
 # Items for right click detection (Make sure the offhand is empty and one of the two last slots in the hotbar is empty)
-execute unless data entity @s Inventory[-1].components."minecraft:custom_data".golf_ball run item replace entity @s weapon.offhand with command_block[item_model="air",item_name='{"text":"Right Click Detection","color":"gray"}',custom_data={golf_ball:1b},consumable={consume_seconds:1000000}]
-execute unless data entity @s Inventory[].components."minecraft:custom_data".exit_golf_ball if data entity @s Inventory[{Slot:8b}] run item replace entity @s hotbar.7 with barrier[custom_data={exit_golf_ball:1b},item_name='{"text":"Abandon","color":"red","italic":false}',attribute_modifiers=[{"id":"golf_ball:block_interaction_range","type":"block_interaction_range",amount:-1024,operation:"add_value",slot:"any"}],consumable={}]
-execute unless data entity @s Inventory[].components."minecraft:custom_data".exit_golf_ball run item replace entity @s hotbar.8 with barrier[custom_data={exit_golf_ball:1b},item_name='{"text":"Abandon","color":"red","italic":false}',attribute_modifiers=[{"id":"golf_ball:block_interaction_range","type":"block_interaction_range",amount:-1024,operation:"add_value",slot:"any"}],consumable={}]
+execute unless data entity @s Inventory[-1].components."minecraft:custom_data".golf_ball run item replace entity @s weapon.offhand with command_block[item_model="air",item_name={"text":"Right Click Detection","color":"gray"},custom_data={golf_ball:1b},consumable={consume_seconds:1000000}]
+execute unless data entity @s Inventory[].components."minecraft:custom_data".exit_golf_ball if data entity @s Inventory[{Slot:8b}] run item replace entity @s hotbar.7 with barrier[custom_data={exit_golf_ball:1b},item_name={"text":"Abandon","color":"red","italic":false},attribute_modifiers=[{"id":"golf_ball:block_interaction_range","type":"block_interaction_range",amount:-1024,operation:"add_value",slot:"any"}],consumable={}]
+execute unless data entity @s Inventory[].components."minecraft:custom_data".exit_golf_ball run item replace entity @s hotbar.8 with barrier[custom_data={exit_golf_ball:1b},item_name={"text":"Abandon","color":"red","italic":false},attribute_modifiers=[{"id":"golf_ball:block_interaction_range","type":"block_interaction_range",amount:-1024,operation:"add_value",slot:"any"}],consumable={}]
 
 # Right click detection score (when the player stops right clicking)
 execute if score @s golf_ball.right_click matches 1.. run scoreboard players remove @s golf_ball.right_click 1

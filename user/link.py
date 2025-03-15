@@ -1,10 +1,8 @@
 
 # Imports
 from python_datapack.constants import *
-from python_datapack.utils.print import *
 from python_datapack.utils.io import *
 from config import *
-import requests
 
 # Main function is run just before making finalyzing the build process (zip, headers, lang, ...)
 def main(config: dict) -> None:
