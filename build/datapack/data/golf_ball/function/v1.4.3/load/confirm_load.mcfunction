@@ -1,11 +1,11 @@
 
-#> golf_ball:v1.4.2/load/confirm_load
+#> golf_ball:v1.4.3/load/confirm_load
 #
-# @within	golf_ball:v1.4.2/load/secondary
+# @within	golf_ball:v1.4.3/load/secondary
 #
 
 # Confirm load
-tellraw @a[tag=convention.debug] {"text":"[Loaded GolfBall v1.4.2]","color":"green"}
+tellraw @a[tag=convention.debug] {"text":"[Loaded GolfBall v1.4.3]","color":"green"}
 scoreboard players set #golf_ball.loaded load.status 1
 
 scoreboard objectives remove golf_ball.right_click
@@ -39,7 +39,6 @@ scoreboard objectives add golf_ball.collision_multiplier dummy
 scoreboard objectives add golf_ball.do_collision dummy
 
 # Load status and default values
-scoreboard players set GolfBall load.status 1300
 scoreboard players set #default_do_y_shots golf_ball.data 0
 scoreboard players set #default_strength_percentage golf_ball.data 50
 scoreboard players set #default_energy_loss_percentage golf_ball.data -90

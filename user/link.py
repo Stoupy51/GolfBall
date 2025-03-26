@@ -6,13 +6,13 @@ from config import *
 
 # Main function is run just before making finalyzing the build process (zip, headers, lang, ...)
 def main(config: dict) -> None:
-	write_to_tick_file(config, """
+	write_tick_file(config, """
 # Ball ticking
 execute if score #total_balls golf_ball.data matches 1.. as @e[type=item_display,tag=golf_ball.display] at @s run function golf_ball:ball/tick_display
 #execute if score #total_balls golf_ball.data matches 1.. as @e[type=item_display,tag=golf_ball.display,x=107,y=53,z=-134,dx=56,dy=56,dz=20] at @s run function golf_ball:ball/tick_display
 """)
 
-	write_to_load_file(config, """
+	write_load_file(config, """
 scoreboard objectives remove golf_ball.right_click
 
 scoreboard objectives add golf_ball.id dummy
@@ -44,7 +44,6 @@ scoreboard objectives add golf_ball.collision_multiplier dummy
 scoreboard objectives add golf_ball.do_collision dummy
 
 # Load status and default values
-scoreboard players set GolfBall load.status 1300
 scoreboard players set #default_do_y_shots golf_ball.data 0
 scoreboard players set #default_strength_percentage golf_ball.data 50
 scoreboard players set #default_energy_loss_percentage golf_ball.data -90

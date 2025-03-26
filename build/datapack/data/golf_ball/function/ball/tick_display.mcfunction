@@ -1,7 +1,7 @@
 
 #> golf_ball:ball/tick_display
 #
-# @within	golf_ball:v1.4.2/tick
+# @within	golf_ball:v1.4.3/tick
 #
 
 #> golf_ball:ball/tick_display
