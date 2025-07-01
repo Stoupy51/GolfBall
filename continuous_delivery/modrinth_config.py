@@ -33,7 +33,7 @@ VERSION_TYPE: str = "release"
 
 # Configuration
 modrinth_config: dict = {
-	"slug": "more-apples",
+	"slug": cfg.id,
 	"project_name": cfg.name,
 	"version": cfg.version,
 	"summary": SUMMARY,
