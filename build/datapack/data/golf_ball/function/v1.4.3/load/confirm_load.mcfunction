@@ -72,7 +72,6 @@ execute store result score #total_balls golf_ball.data if entity @e[type=item_di
 #define score_holder #pos
 
 ## Setup tellraw prefix
-# tellraw @a ["\n",{"nbt":"GolfBall","storage":"golf_ball:main","interpret":true},{"text":" Souhaitez tous la bienvenue à "},{"selector":"@s","color":"aqua"},{"text":" !\nIl est le "},{"score":{"name":"#next_id","objective":"switch.data"},"color":"aqua"},{"text":"ème joueur a rejoindre !"}]
 data modify storage golf_ball:main GolfBall set value [{"text":"[GolfBall]","color":"green"}]
 
 # Percentages of the ball's speed that is kept every tick

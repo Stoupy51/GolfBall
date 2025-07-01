@@ -3,17 +3,13 @@
 #
 # @within	golf_ball:ball/physics
 #
-
-#> golf_ball:ball/bounce_physics
-#
-# @within			golf_ball:ball/physics
 # @executed			as & at the base of the ball (baby pig)
-#
+# 
 # @description		Manage the bounce physics of the ball:
-#					- If the ball go into a wall, we reverse the direction of the ball.
-#					The direction that is reversed is where the difference with the prediction is the highest.
-#					Also, we take 90% of the speed of the ball to simulate the loss of energy.
-#
+# 				- If the ball go into a wall, we reverse the direction of the ball.
+# 				The direction that is reversed is where the difference with the prediction is the highest.
+# 				Also, we take 90% of the speed of the ball to simulate the loss of energy.
+# 
 # @example			If dx = 5 and dy = 9, and the ball go into a wall, we reverse the direction of the ball to dx = 5 and dy = -8.
 #
 

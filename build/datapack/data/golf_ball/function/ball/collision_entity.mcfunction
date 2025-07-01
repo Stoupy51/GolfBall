@@ -3,12 +3,8 @@
 #
 # @within	golf_ball:ball/collision_physics {scoreboard:"$(scoreboard)"}
 #
-
-#> golf_ball:ball/collision_entity
-#
-# @within			golf_ball:ball/collision_physics
 # @executed			as the collider & at the base of the ball (baby pig)
-#
+# 
 # @description		Calculate the motion to add to the ball when it collides with an entity (1200 - the distance between the ball and the entity)
 #
 
@@ -55,5 +51,4 @@ scoreboard players operation #one_minus_z golf_ball.data /= #1000 golf_ball.data
 # Add the extra motion to the ball
 scoreboard players operation #x_motion_to_add golf_ball.data += #one_minus_x golf_ball.data
 scoreboard players operation #z_motion_to_add golf_ball.data += #one_minus_z golf_ball.data
-
 

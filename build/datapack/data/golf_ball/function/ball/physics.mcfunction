@@ -3,12 +3,8 @@
 #
 # @within	golf_ball:ball/tick_base
 #
-
-#> golf_ball:ball/physics
-#
-# @within			golf_ball:ball/tick_base
 # @executed			as & at the base of the ball (baby pig)
-#
+# 
 # @description		Manage the physics of the ball
 #
 
@@ -42,7 +38,6 @@ execute unless score #dy golf_ball.data matches -3..3 unless score #my golf_ball
 execute if score @s golf_ball.do_collision matches 1 run function golf_ball:ball/collision_physics with storage golf_ball:main parameters.collision_distance
 
 
-
 ## Get the surface
 # Surface : 0 = normal, 1 = fast, 2 = slippery, 3 = slow, 4 = very slow, in the air = slippery
 # When in air : surface = 0
@@ -67,7 +62,6 @@ execute store result entity @s Motion[0] double 0.000001 run scoreboard players 
 # Motion Y
 execute store result score #my golf_ball.data run data get entity @s Motion[1] 1000
 scoreboard players operation @s golf_ball.motion_y = #my golf_ball.data
-
 
 # Motion Z
 execute if score #surface golf_ball.data matches 0 run scoreboard players operation @s golf_ball.motion_z *= @s golf_ball.friction_normal

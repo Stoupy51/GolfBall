@@ -1,7 +1,6 @@
 
 #> golf_ball:ball/post_summon
 #
-# @within			golf_ball:summon & golf_ball:steppable_summon
 # @executed			as & at the summoned the ball
 #
 # @description		Manage the summoning of a golf ball

@@ -1,7 +1,6 @@
 
 #> golf_ball:ball/bounce_physics
 #
-# @within			golf_ball:ball/physics
 # @executed			as & at the base of the ball (baby pig)
 #
 # @description		Manage the bounce physics of the ball:

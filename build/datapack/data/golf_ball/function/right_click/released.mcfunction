@@ -3,12 +3,8 @@
 #
 # @within	golf_ball:ball/tick_player
 #
-
-#> golf_ball:ball/right_click
-#
-# @within			golf_ball:ball/tick_player
 # @executed			at the base of the ball (baby pig) and as the player
-#
+# 
 # @description		The player right clicked, so we need to launch the ball where he is looking
 #
 

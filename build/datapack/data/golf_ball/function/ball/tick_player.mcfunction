@@ -1,15 +1,11 @@
 
 #> golf_ball:ball/tick_player
 #
-# @within	golf_ball:summon
-#			golf_ball:ball/tick_base
+# @within	golf_ball:ball/tick_base
+#			golf_ball:summon
 #
-
-#> golf_ball:ball/tick_player
-#
-# @within			golf_ball:ball/tick_base
 # @executed			at the base of the ball (baby pig) and as the player
-#
+# 
 # @description		Manage the player's inputs
 #
 

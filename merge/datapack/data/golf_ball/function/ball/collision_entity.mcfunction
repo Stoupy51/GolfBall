@@ -1,7 +1,6 @@
 
 #> golf_ball:ball/collision_entity
 #
-# @within			golf_ball:ball/collision_physics
 # @executed			as the collider & at the base of the ball (baby pig)
 #
 # @description		Calculate the motion to add to the ball when it collides with an entity (1200 - the distance between the ball and the entity)

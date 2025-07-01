@@ -1,7 +1,6 @@
 
 #> golf_ball:ball/tick_display
 #
-# @within			golf_ball:tick
 # @executed			as & at the item display
 #
 # @description		Manage the tick of the ball

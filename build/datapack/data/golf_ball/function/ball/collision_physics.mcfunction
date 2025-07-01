@@ -3,12 +3,8 @@
 #
 # @within	golf_ball:ball/physics with storage golf_ball:main parameters.collision_distance
 #
-
-#> golf_ball:ball/collision_physics
-#
-# @within			golf_ball:ball/physics
 # @executed			as & at the base of the ball (baby pig)
-#
+# 
 # @description		Manage the collisions of the ball
 #
 
