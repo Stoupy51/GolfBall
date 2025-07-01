@@ -1,11 +1,11 @@
 
-#> golf_ball:v1.4.3/load/confirm_load
+#> golf_ball:v1.4.4/load/confirm_load
 #
-# @within	golf_ball:v1.4.3/load/secondary
+# @within	golf_ball:v1.4.4/load/secondary
 #
 
 # Confirm load
-tellraw @a[tag=convention.debug] {"text":"[Loaded GolfBall v1.4.3]","color":"green"}
+tellraw @a[tag=convention.debug] {"text":"[Loaded GolfBall v1.4.4]","color":"green"}
 scoreboard players set #golf_ball.loaded load.status 1
 
 scoreboard objectives remove golf_ball.right_click
