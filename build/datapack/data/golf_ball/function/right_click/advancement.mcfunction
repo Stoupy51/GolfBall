@@ -1,6 +1,8 @@
 
 #> golf_ball:right_click/advancement
 #
+# @executed	as the player & at current position
+#
 # @within	advancement golf_ball:right_click
 #
 

@@ -1,10 +1,10 @@
 
 #> golf_ball:right_click/marker
 #
+# @executed	at @s
+#
 # @within	golf_ball:right_click/get_motion
 #
-# @executed			as & at a temporary marker
-# 
 # @description		Collect the marker position and kill it
 #
 

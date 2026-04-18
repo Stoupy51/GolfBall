@@ -1,7 +1,15 @@
 {
 	"pack": {
-		"pack_format": 81,
-		"description": "GolfBall [1.4.4] by Stoupy51"
+		"pack_format": 94,
+		"description": "GolfBall [1.4.5] by Stoupy51",
+		"min_format": [
+			94,
+			1
+		],
+		"max_format": [
+			1000,
+			0
+		]
 	},
 	"id": "golf_ball"
 }

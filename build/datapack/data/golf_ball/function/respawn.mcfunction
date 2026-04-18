@@ -1,10 +1,10 @@
 
 #> golf_ball:respawn
 #
+# @executed	as & at the player that executes the command
+#
 # @within	???
 #
-# @executed			as & at the player that executes the command
-# 
 # @description		Teleport the ball back to its original position
 #
 

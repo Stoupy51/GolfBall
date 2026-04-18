@@ -1,10 +1,10 @@
 
 #> golf_ball:ball/tick_base
 #
-# @within	golf_ball:ball/tick_display
+# @executed	at @s
 #
-# @executed			as & at the base of the ball (baby pig)
-# 
+# @within	golf_ball:ball/tick_display [ at @s ]
+#
 # @description		Manage the tick of the ball
 #
 

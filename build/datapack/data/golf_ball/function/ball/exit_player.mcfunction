@@ -1,10 +1,10 @@
 
 #> golf_ball:ball/exit_player
 #
+# @executed	as the player & at current position
+#
 # @within	advancement golf_ball:exit_player
 #
-# @executed			at the base of the ball (baby pig) and as the player
-# 
 # @description		Exit the player and kill the ball
 #
 

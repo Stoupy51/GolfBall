@@ -1,10 +1,10 @@
 
 #> golf_ball:ball/bounce_physics
 #
+# @executed	at @s
+#
 # @within	golf_ball:ball/physics
 #
-# @executed			as & at the base of the ball (baby pig)
-# 
 # @description		Manage the bounce physics of the ball:
 # 				- If the ball go into a wall, we reverse the direction of the ball.
 # 				The direction that is reversed is where the difference with the prediction is the highest.

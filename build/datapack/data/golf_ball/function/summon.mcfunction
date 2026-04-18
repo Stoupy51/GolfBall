@@ -1,10 +1,10 @@
 
 #> golf_ball:summon
 #
+# @executed	as & at the player who summoned the ball
+#
 # @within	???
 #
-# @executed			as & at the player who summoned the ball
-# 
 # @description		Manage the summoning of a golf ball
 #
 

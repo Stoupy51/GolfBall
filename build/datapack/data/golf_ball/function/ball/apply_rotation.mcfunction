@@ -1,10 +1,10 @@
 
 #> golf_ball:ball/apply_rotation
 #
+# @executed	at @s
+#
 # @within	golf_ball:ball/tick_base
 #
-# @executed			at the base of the ball (baby pig) & as the item display
-# 
 # @description		Manage the tick of the ball
 #
 

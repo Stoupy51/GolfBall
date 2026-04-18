@@ -1,10 +1,10 @@
 
 #> golf_ball:ball/physics
 #
+# @executed	at @s
+#
 # @within	golf_ball:ball/tick_base
 #
-# @executed			as & at the base of the ball (baby pig)
-# 
 # @description		Manage the physics of the ball
 #
 

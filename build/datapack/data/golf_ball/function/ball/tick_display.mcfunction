@@ -1,10 +1,11 @@
 
 #> golf_ball:ball/tick_display
 #
-# @within	golf_ball:v1.4.4/tick
+# @executed	as @e[type=item_display,tag=golf_ball.display] & at @s
 #
-# @executed			as & at the item display
-# 
+# @within	golf_ball:v1.4.5/tick [ as @e[type=item_display,tag=golf_ball.display] & at @s ]
+#			golf_ball:v1.4.5/tick
+#
 # @description		Manage the tick of the ball
 #
 
