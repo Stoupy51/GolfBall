@@ -1,13 +1,13 @@
 {
 	"pack": {
-		"pack_format": 94,
+		"pack_format": 107,
 		"description": "GolfBall [1.4.5] by Stoupy51",
 		"min_format": [
-			94,
+			107,
 			1
 		],
 		"max_format": [
-			1000,
+			9999,
 			0
 		]
 	},
