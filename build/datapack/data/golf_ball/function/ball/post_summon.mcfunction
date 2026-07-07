@@ -1,9 +1,9 @@
 
 #> golf_ball:ball/post_summon
 #
-# @executed	as @e[type=cat,tag=golf_ball.new] & at @s
+# @executed	as @e[tag=...] & at @s
 #
-# @within	golf_ball:summon [ as @e[type=cat,tag=golf_ball.new] & at @s ]
+# @within	golf_ball:summon [ as @e[tag=...] & at @s ]
 #
 # @description		Manage the summoning of a golf ball
 #

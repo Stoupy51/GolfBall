@@ -1,13 +1,13 @@
 
-#> golf_ball:v1.5.0/load/confirm_load
+#> golf_ball:v1.6.0/load/confirm_load
 #
-# @within	golf_ball:v1.5.0/load/secondary
+# @within	golf_ball:v1.6.0/load/secondary
 #
 
 # Confirm load
-tellraw @a[tag=convention.debug] {"text":"[Loaded GolfBall v1.5.0]","color":"green"}
+tellraw @a[tag=convention.debug] {"text":"[Loaded GolfBall v1.6.0]","color":"green"}
 scoreboard players set #golf_ball.loaded load.status 1
-function golf_ball:v1.5.0/load/set_items_storage
+function golf_ball:v1.6.0/load/set_items_storage
 
 scoreboard objectives remove golf_ball.right_click
 
@@ -38,6 +38,12 @@ scoreboard objectives add golf_ball.strength_percentage dummy
 scoreboard objectives add golf_ball.energy_loss_percentage dummy
 scoreboard objectives add golf_ball.collision_multiplier dummy
 scoreboard objectives add golf_ball.do_collision dummy
+
+# Physics engine: 0 = vanilla sulfur cube (26.2+ bounciness/friction_modifier/air_drag_modifier attributes), 1 = legacy scoreboard physics
+execute unless score #default_legacy_physics golf_ball.data matches 0..1 run scoreboard players set #default_legacy_physics golf_ball.data 0
+
+# Migrate balls summoned before v1.6.0 (cat base) to the legacy physics engine
+tag @e[type=cat,tag=golf_ball.base] add golf_ball.legacy
 
 # Load status and default values
 scoreboard players set #default_do_y_shots golf_ball.data 0

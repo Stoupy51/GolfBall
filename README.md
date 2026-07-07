@@ -15,6 +15,17 @@
 - 🔄 `/function golf_ball:respawn`: Rolls back the ball to the last shot position (e.g: `/execute as <player> run function golf_ball:respawn`)
 
 
+## 🆕 Physics Engines (since 1.6.0)
+Since Minecraft 26.2, new balls are a tiny **sulfur cube** holding an absorbed sponge (the vanilla "Golf Ball" archetype 🏌️).<br>
+Bouncing, friction and air drag are handled natively by the game through the new `bounciness`, `friction_modifier` and `air_drag_modifier` attributes - no more per-tick physics functions!
+
+- ⚙️ Tune a ball's physics directly with attributes, e.g:<br>
+`/execute as <player> on vehicle run attribute @s minecraft:bounciness base set 0.9`<br>
+(same for `minecraft:friction_modifier` and `minecraft:air_drag_modifier`)
+- 🧱 Swap the absorbed block to change the ball's archetype, e.g. a "Rubber Ball":<br>
+`/execute as <player> on vehicle run item replace entity @s body with minecraft:oak_planks`
+- 🕰️ Prefer the old scoreboard physics? `/SPS #default_legacy_physics golf_ball.data 1` makes newly summoned balls use the legacy engine (cat base) with all the legacy settings below.
+
 ## Configuration Commands ⚙️
 Fine-tune your golfing experience with these powerful configuration commands!<br>
 Customize ball physics, movement dynamics, power settings and more - either globally for all new balls or locally for individual balls. 🎮
@@ -26,15 +37,17 @@ Customize ball physics, movement dynamics, power settings and more - either glob
 | Setting | Global Command | Local Command | Default | Range | Description |
 |---------|---------------|---------------|----------|--------|-------------|
 | Strength Percentage 💪 | `/SPS #default_strength_percentage golf_ball.data <value>` | `/SPS @s golf_ball.strength_percentage <value>` | 50 | 0-100 | Controls the overall power of your shots |
-| Energy Loss 📉 | `/SPS #default_energy_loss_percentage golf_ball.data <value>` | `/SPS @s golf_ball.energy_loss_percentage <value>` | -90 | -100-0 | Determines how much energy is lost on impacts |
-| Collision Multiplier 💥 | `/SPS #default_collision_multiplier golf_ball.data <value>` | `/SPS @s golf_ball.collision_multiplier <value>` | 50 | 0-100 | Adjusts the intensity of collisions |
+| Energy Loss 📉 (legacy) | `/SPS #default_energy_loss_percentage golf_ball.data <value>` | `/SPS @s golf_ball.energy_loss_percentage <value>` | -90 | -100-0 | Determines how much energy is lost on impacts (vanilla balls: use the `bounciness` attribute) |
+| Collision Multiplier 💥 (legacy) | `/SPS #default_collision_multiplier golf_ball.data <value>` | `/SPS @s golf_ball.collision_multiplier <value>` | 50 | 0-100 | Adjusts the intensity of collisions (vanilla balls are pushed natively) |
 | Y-Shots 🔼 | `/SPS #default_do_y_shots golf_ball.data <value>` | `/SPS @s golf_ball.do_y_shots <value>` | 0 | 0 or 1 | Enables/disables vertical shots |
-| Collision Detection 🎯 | `/SPS #default_do_collision golf_ball.data <value>` | `/SPS @s golf_ball.do_collision <value>` | 1 | 0 or 1 | Toggles collision physics |
+| Collision Detection 🎯 (legacy) | `/SPS #default_do_collision golf_ball.data <value>` | `/SPS @s golf_ball.do_collision <value>` | 1 | 0 or 1 | Toggles collision physics |
+| Legacy Physics 🕰️ | `/SPS #default_legacy_physics golf_ball.data <value>` | N/A | 0 | 0 or 1 | 1 = new balls use the old scoreboard physics engine |
 | Minimum Power ⬇️ | `/SPS #min_power golf_ball.data <value>` | N/A | 40 | N/A | Sets the lower power limit |
 | Maximum Power ⬆️ | `/SPS #max_power golf_ball.data <value>` | N/A | 500 | N/A | Sets the upper power limit |
 
-### Surface Friction Settings ⚡
-Control how the ball behaves on different surfaces by adjusting friction values. Each value represents the percentage of speed retained per tick.
+### Surface Friction Settings ⚡ (legacy engine only)
+Control how the ball behaves on different surfaces by adjusting friction values. Each value represents the percentage of speed retained per tick.<br>
+Vanilla sulfur cube balls use the block's real friction combined with the `friction_modifier` attribute instead.
 
 | Surface Type | Global Command | Local Command | Default | Range | Best For |
 |----------|--------------------------------|--------------------------------|---------------|--------|-----------|

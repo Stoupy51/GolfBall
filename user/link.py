@@ -44,6 +44,12 @@ scoreboard objectives add {ns}.energy_loss_percentage dummy
 scoreboard objectives add {ns}.collision_multiplier dummy
 scoreboard objectives add {ns}.do_collision dummy
 
+# Physics engine: 0 = vanilla sulfur cube (26.2+ bounciness/friction_modifier/air_drag_modifier attributes), 1 = legacy scoreboard physics
+execute unless score #default_legacy_physics {ns}.data matches 0..1 run scoreboard players set #default_legacy_physics {ns}.data 0
+
+# Migrate balls summoned before v1.6.0 (cat base) to the legacy physics engine
+tag @e[type=cat,tag={ns}.base] add {ns}.legacy
+
 # Load status and default values
 scoreboard players set #default_do_y_shots {ns}.data 0
 scoreboard players set #default_strength_percentage {ns}.data 50
