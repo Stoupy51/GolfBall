@@ -49,12 +49,10 @@ execute if score @s {ns}.power matches 420..439 run title @s actionbar [{{"text"
 execute if score @s {ns}.power matches 440..459 run title @s actionbar [{{"text":"|====================","color":"green"}},{{"text":"P","color":"yellow"}},{{"text":"==|"}}]
 execute if score @s {ns}.power matches 460..479 run title @s actionbar [{{"text":"|=====================","color":"green"}},{{"text":"P","color":"yellow"}},{{"text":"=|"}}]
 execute if score @s {ns}.power matches 480..500 run title @s actionbar [{{"text":"|======================","color":"green"}},{{"text":"P","color":"yellow"}},{{"text":"|"}}]
-
 """)
 
 	write_function(f"{ns}:right_click/get_motion", f"""
 $execute positioned 0 0 0 rotated as @s positioned ^ ^ ^$(power)0000 summon marker run function {ns}:right_click/marker
-
 """)
 
 	write_function(f"{ns}:right_click/marker", f"""
@@ -68,7 +66,6 @@ $execute positioned 0 0 0 rotated as @s positioned ^ ^ ^$(power)0000 summon mark
 data modify storage {ns}:main Pos set from entity @s Pos
 execute unless score #do_y_shots {ns}.data matches 1 run data modify storage {ns}:main Pos[1] set value 0.0d
 kill @s
-
 """)
 
 	write_function(f"{ns}:right_click/released", f"""
@@ -124,6 +121,5 @@ scoreboard players operation @s {ns}.power_direction = #direction_power {ns}.dat
 # Playsound and particles
 playsound entity.arrow.shoot ambient @s
 particle cloud ~ ~ ~ 0.1 0.1 0.1 0.001 10
-
 """)
 

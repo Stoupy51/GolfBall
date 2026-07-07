@@ -26,7 +26,6 @@ execute on vehicle run scoreboard players set @s {ns}.motion_x 0
 execute on vehicle run scoreboard players set @s {ns}.motion_y 0
 execute on vehicle run scoreboard players set @s {ns}.motion_z 0
 execute on vehicle run data modify entity @s Motion set value [0.0d, 0.0d, 0.0d]
-
 """)
 
 	write_function(f"{ns}:summon", f"""
@@ -60,6 +59,5 @@ tag @s remove {ns}.temp
 
 # Execute the first player tick
 function {ns}:ball/tick_player
-
 """)
 

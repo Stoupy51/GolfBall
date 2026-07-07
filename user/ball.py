@@ -21,7 +21,6 @@ execute store result score #rotation {ns}.data run data get storage {ns}:temp Ro
 scoreboard players add #rotation {ns}.data 1800
 execute store result entity @s[type=item_display] Rotation[0] float 0.1 run scoreboard players get #rotation {ns}.data
 data remove storage {ns}:temp Rotation
-
 """)
 
 	write_function(f"{ns}:ball/bounce_physics", f"""
@@ -55,7 +54,6 @@ execute if score #abs_dx {ns}.data < #abs_dz {ns}.data run scoreboard players op
 
 # Particles
 particle angry_villager ~ ~ ~ 0 0 0 0 1 force @a[distance=..128]
-
 """)
 
 	write_function(f"{ns}:ball/collision_entity", f"""
@@ -110,7 +108,6 @@ scoreboard players operation #one_minus_z {ns}.data /= #1000 {ns}.data
 scoreboard players operation #x_motion_to_add {ns}.data += #one_minus_x {ns}.data
 scoreboard players operation #z_motion_to_add {ns}.data += #one_minus_z {ns}.data
 
-
 """)
 
 	write_function(f"{ns}:ball/collision_physics", f"""
@@ -141,7 +138,6 @@ scoreboard players operation #x_motion_to_add {ns}.data *= @s {ns}.collision_mul
 scoreboard players operation #z_motion_to_add {ns}.data *= @s {ns}.collision_multiplier
 scoreboard players operation @s {ns}.motion_x -= #x_motion_to_add {ns}.data
 scoreboard players operation @s {ns}.motion_z -= #z_motion_to_add {ns}.data
-
 """)
 
 	write_function(f"{ns}:ball/exit_player", f"""
@@ -171,7 +167,6 @@ tp @s ~ ~1 ~
 
 # Restore player size
 attribute @s scale base reset
-
 """)
 
 	write_function(f"{ns}:ball/physics", f"""
@@ -262,7 +257,6 @@ scoreboard players operation @s {ns}.predicted_z = #pos_z {ns}.data
 scoreboard players operation @s {ns}.predicted_z += #small_motion_z {ns}.data
 scoreboard players operation @s {ns}.predicted_y = #pos_y {ns}.data
 scoreboard players operation @s {ns}.predicted_y += #my {ns}.data
-
 """)
 
 	write_function(f"{ns}:ball/post_summon", f"""
@@ -316,12 +310,10 @@ execute on passengers if entity @s[type=item_display] run tag @s add smithed.ent
 execute on passengers if entity @s[type=item_display] run tag @s add smithed.strict
 execute on passengers if entity @s[type=item_display] run tag @s add global.ignore
 execute on passengers if entity @s[type=item_display] run tag @s add global.ignore.kill
-
 """)
 
 	write_function(f"{ns}:ball/ride_vehicle_macro", """
 $execute on vehicle run ride $(name) mount @s
-
 """)
 
 	write_function(f"{ns}:ball/tick_base", f"""
@@ -340,7 +332,6 @@ execute if data storage {ns}:temp Rotation on passengers if entity @s[type=item_
 
 # Physics calculations (legacy engine only, vanilla sulfur cube balls rely on the bounciness/friction_modifier/air_drag_modifier attributes)
 execute if entity @s[tag={ns}.legacy] run function {ns}:ball/physics
-
 """)
 
 	write_function(f"{ns}:ball/tick_display", f"""
@@ -369,7 +360,6 @@ execute if score #alive {ns}.data matches 1 on vehicle at @s run function {ns}:b
 # execute store result score #rotation {ns}.data run data get entity @s Rotation[1] 10
 # scoreboard players operation #rotation {ns}.data += #ball_spin {ns}.data
 # execute store result entity @s Rotation[1] float 0.1 run scoreboard players get #rotation {ns}.data
-
 """)
 
 	write_function(f"{ns}:ball/tick_player", f"""
@@ -422,6 +412,5 @@ execute if score @s {ns}.cooldown matches 1.. run scoreboard players remove @s {
 
 # Copy the player's rotation
 data modify storage {ns}:temp Rotation set from entity @s Rotation
-
 """)
 
