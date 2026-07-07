@@ -2,10 +2,23 @@
 # Imports
 from stewbeet import Context, write_load_file, write_tick_file
 
+from user.ball import setup_ball_functions
+from user.resources import setup_resources
+from user.right_click import setup_right_click_functions
+from user.summon import setup_summon_functions
+
 
 # Main function is run just before making finalyzing the build process (zip, headers, lang, ...)
 def beet_default(ctx: Context) -> None:
 	ns: str = ctx.project_id
+
+	# Setup all functions (ball ticking/physics, summon/respawn, right click handling)
+	setup_ball_functions(ctx)
+	setup_summon_functions(ctx)
+	setup_right_click_functions(ctx)
+
+	# Setup json resources (advancements, loot tables, predicates, tags)
+	setup_resources(ctx)
 
 	write_tick_file(f"""
 # Ball ticking
@@ -93,4 +106,3 @@ scoreboard players set #k_slippery {ns}.data 98
 scoreboard players set #k_slow {ns}.data 85
 scoreboard players set #k_very_slow {ns}.data 80
 """)
-

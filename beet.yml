@@ -18,7 +18,6 @@ output: "build"
 # Takes a nested pack config, see PackConfig() documentation
 data_pack:
     name: "datapack"
-    load: ["merge/datapack"]
 
 # Takes a nested pack config, see PackConfig() documentation
 resource_pack:
