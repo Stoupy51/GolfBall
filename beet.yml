@@ -23,18 +23,21 @@ data_pack:
 resource_pack:
     name: resource_pack
 
+require:
+    - stewbeet
+    - beet.contrib.livereload
+
 # A list of strings or dicts representing "plugins".
 pipeline:
-    - "stewbeet.plugins.initialize"
-    - "stewbeet.plugins.datapack.loading"
-    - "user.link" # User code
-    - "stewbeet.plugins.finalyze.basic_datapack_structure"
-    - "stewbeet.plugins.finalyze.dependencies"
-    - "stewbeet.plugins.finalyze.last_final"
-    - "stewbeet.plugins.auto.headers"
-    - "stewbeet.plugins.archive"
-    - "stewbeet.plugins.copy_to_destination"
-    - "stewbeet.plugins.compute_sha1"
+    - stewbeet.plugins.datapack.loading.silent
+    - user.link # User code
+    - stewbeet.plugins.finalyze.basic_datapack_structure.silent
+    - stewbeet.plugins.finalyze.dependencies.silent
+    - stewbeet.plugins.finalyze.last_final.silent
+    - stewbeet.plugins.auto.headers.silent
+    - stewbeet.plugins.archive
+    - stewbeet.plugins.copy_to_destination
+    - stewbeet.plugins.compute_sha1.silent
 
 # Generic dict which holds extra information usable by plugins
 meta:

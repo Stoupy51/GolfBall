@@ -1,5 +1,4 @@
 
-# ruff: noqa: E501
 # Imports
 from beet import Context
 from stewbeet import write_function

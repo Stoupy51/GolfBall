@@ -106,3 +106,4 @@ scoreboard players set #k_slippery {ns}.data 98
 scoreboard players set #k_slow {ns}.data 85
 scoreboard players set #k_very_slow {ns}.data 80
 """)
+

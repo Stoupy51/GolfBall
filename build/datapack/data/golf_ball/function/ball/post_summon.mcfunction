@@ -4,6 +4,7 @@
 # @executed	as @e[tag=...] & at @s
 #
 # @within	golf_ball:summon [ as @e[tag=...] & at @s ]
+#			golf_ball:legacy_summon [ as @e[tag=...] & at @s ]
 #
 # @description		Manage the summoning of a golf ball
 #
@@ -20,9 +21,11 @@ effect give @s resistance infinite 255 true
 # Make the player ride the ball
 ride @p[tag=golf_ball.temp] mount @s
 
-# Scale attribut to minimum
-attribute @s scale base set 0.0
-attribute @s jump_strength base set 0.0
+# Scale attributs to minimum
+attribute @s[type=!minecraft:sulfur_cube] scale base set 0.0
+attribute @s[type=!minecraft:sulfur_cube] jump_strength base set 0.0
+attribute @s[type=minecraft:sulfur_cube] scale base set 0.3
+attribute @s[type=minecraft:sulfur_cube] minecraft:air_drag_modifier base set 5
 
 # Remember pos, and apply interpolation
 data modify storage golf_ball:main Pos set from entity @s Pos
