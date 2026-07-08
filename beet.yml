@@ -48,6 +48,10 @@ meta:
     stewbeet:
         # Path where definitions debug information will be dumped
         definitions_debug: "definitions_debug.json"
+        # Live reload configuration (stewbeet.plugins.livereload / beet.contrib.livereload)
+        livereload:
+            # Directory containing logs/latest.log of the client to reload (the currently running one)
+            minecraft: "D:/minecraft/latest"
         # Optional list of destination paths where generated files will be copied
         build_copy_destinations:
             # Paths to copy the datapack(s) to

@@ -3,8 +3,8 @@
 #
 # @executed	as @e[tag=...] & at @s
 #
-# @within	golf_ball:summon [ as @e[tag=...] & at @s ]
-#			golf_ball:legacy_summon [ as @e[tag=...] & at @s ]
+# @within	golf_ball:sulfur_cube [ as @e[tag=...] & at @s ]
+#			golf_ball:summon [ as @e[tag=...] & at @s ]
 #
 # @description		Manage the summoning of a golf ball
 #

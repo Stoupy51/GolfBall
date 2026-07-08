@@ -16,15 +16,15 @@
 
 
 ## 🆕 Physics Engines (since 1.6.0)
-Since Minecraft 26.2, new balls are a tiny **sulfur cube** holding an absorbed sponge (the vanilla "Golf Ball" archetype 🏌️).<br>
-Bouncing, friction and air drag are handled natively by the game through the new `bounciness`, `friction_modifier` and `air_drag_modifier` attributes - no more per-tick physics functions!
+Since Minecraft 26.2, you can alternatively summon the ball as a tiny **sulfur cube** holding an absorbed sponge (the vanilla "Golf Ball" archetype 🏌️) with `/function golf_ball:sulfur_cube`.<br>
+Bouncing, friction and air drag are then handled natively by the game through the new `bounciness`, `friction_modifier` and `air_drag_modifier` attributes - no per-tick physics functions!
 
 - ⚙️ Tune a ball's physics directly with attributes, e.g:<br>
 `/execute as <player> on vehicle run attribute @s minecraft:bounciness base set 0.9`<br>
 (same for `minecraft:friction_modifier` and `minecraft:air_drag_modifier`)
 - 🧱 Swap the absorbed block to change the ball's archetype, e.g. a "Rubber Ball":<br>
 `/execute as <player> on vehicle run item replace entity @s body with minecraft:oak_planks`
-- 🕰️ Prefer the old scoreboard physics? `/SPS #default_legacy_physics golf_ball.data 1` makes newly summoned balls use the legacy engine (cat base) with all the legacy settings below.
+- ⚠️ Vanilla limitation: a sulfur cube holding a block has its step height hardcoded to 0, so it cannot roll up slabs or snow layers. That's why the default `golf_ball:summon` still uses the scoreboard physics engine (cat base) with all the settings below.
 
 ## Configuration Commands ⚙️
 Fine-tune your golfing experience with these powerful configuration commands!<br>
@@ -41,7 +41,6 @@ Customize ball physics, movement dynamics, power settings and more - either glob
 | Collision Multiplier 💥 (legacy) | `/SPS #default_collision_multiplier golf_ball.data <value>` | `/SPS @s golf_ball.collision_multiplier <value>` | 50 | 0-100 | Adjusts the intensity of collisions (vanilla balls are pushed natively) |
 | Y-Shots 🔼 | `/SPS #default_do_y_shots golf_ball.data <value>` | `/SPS @s golf_ball.do_y_shots <value>` | 0 | 0 or 1 | Enables/disables vertical shots |
 | Collision Detection 🎯 (legacy) | `/SPS #default_do_collision golf_ball.data <value>` | `/SPS @s golf_ball.do_collision <value>` | 1 | 0 or 1 | Toggles collision physics |
-| Legacy Physics 🕰️ | `/SPS #default_legacy_physics golf_ball.data <value>` | N/A | 0 | 0 or 1 | 1 = new balls use the old scoreboard physics engine |
 | Minimum Power ⬇️ | `/SPS #min_power golf_ball.data <value>` | N/A | 40 | N/A | Sets the lower power limit |
 | Maximum Power ⬆️ | `/SPS #max_power golf_ball.data <value>` | N/A | 500 | N/A | Sets the upper power limit |
 

@@ -4,8 +4,8 @@
 # @executed	at @s
 #
 # @within	golf_ball:ball/tick_base
+#			golf_ball:sulfur_cube
 #			golf_ball:summon
-#			golf_ball:legacy_summon
 #
 # @description		Manage the player's inputs
 #
