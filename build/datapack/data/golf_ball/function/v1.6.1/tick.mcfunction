@@ -1,7 +1,7 @@
 
-#> golf_ball:v1.6.0/tick
+#> golf_ball:v1.6.1/tick
 #
-# @within	golf_ball:v1.6.0/load/tick_verification
+# @within	golf_ball:v1.6.1/load/tick_verification
 #
 
 # Ball ticking
