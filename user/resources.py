@@ -18,23 +18,23 @@ def setup_resources(ctx: Context) -> None:
 	ctx.data[ns].advancements["right_click"] = set_json_encoder(Advancement(json_content), max_level=-1)
 
 	# Loot tables
-	json_content = {"type":"minecraft:block","pools":[{"rolls":1,"bonus_rolls":0,"entries":[{"type":"minecraft:item","name":"minecraft:player_head","functions":[{"function":"minecraft:fill_player_head","entity":"this"}]}]}]}
+	json_content = {"type":"minecraft:block","pools":[{"rolls":1,"bonus_rolls":0,"entries":[{"type":"minecraft:item","name":"minecraft:player_head","modifier":[{"type":"minecraft:fill_player_head","entity":"this"}]}]}]}
 	ctx.data[ns].loot_tables["player_head"] = set_json_encoder(LootTable(json_content), max_level=-1)
 
 	# Predicates
-	json_content = {"condition":"minecraft:entity_scores","entity":"this","scores":{f"{ns}.id":{"min":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"#predicate"},"score":f"{ns}.id"},"max":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"#predicate"},"score":f"{ns}.id"}}}}
+	json_content = {"type":"minecraft:entity_scores","entity":"this","scores":{f"{ns}.id":{"min":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"#predicate"},"score":f"{ns}.id"},"max":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"#predicate"},"score":f"{ns}.id"}}}}
 	ctx.data[ns].predicates["has_same_id"] = set_json_encoder(Predicate(json_content), max_level=-1)
 
-	json_content = {"condition":"minecraft:entity_properties","entity":"this","predicate":{"vehicle":{}}}
+	json_content = {"type":"minecraft:entity_properties","entity":"this","predicate":{"vehicle":{}}}
 	ctx.data[ns].predicates["has_vehicle"] = set_json_encoder(Predicate(json_content), max_level=-1)
 
-	json_content = {"condition":"minecraft:entity_properties","entity":"this","predicate":{"passenger":{}}}
+	json_content = {"type":"minecraft:entity_properties","entity":"this","predicate":{"passenger":{}}}
 	ctx.data[ns].predicates["have_passenger"] = set_json_encoder(Predicate(json_content), max_level=-1)
 
-	json_content = {"condition":"minecraft:entity_properties","entity":"this","predicate":{"passenger":{"minecraft:entity_type":"minecraft:player"}}}
+	json_content = {"type":"minecraft:entity_properties","entity":"this","predicate":{"passenger":{"minecraft:entity_type":"minecraft:player"}}}
 	ctx.data[ns].predicates["have_player_passenger"] = set_json_encoder(Predicate(json_content), max_level=-1)
 
-	json_content = {"condition":"minecraft:location_check","predicate":{"fluid":{"fluids":"#minecraft:water"}}}
+	json_content = {"type":"minecraft:location_check","predicate":{"fluid":{"fluids":"#minecraft:water"}}}
 	ctx.data[ns].predicates["in_water"] = set_json_encoder(Predicate(json_content), max_level=-1)
 
 	# Block tags
