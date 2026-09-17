@@ -3,22 +3,12 @@
 	"entity": "this",
 	"scores": {
 		"golf_ball.id": {
-			"min": {
-				"type": "minecraft:score",
-				"target": {
-					"type": "minecraft:fixed",
-					"name": "#predicate"
-				},
-				"score": "golf_ball.id"
+			"type": "minecraft:score",
+			"target": {
+				"type": "minecraft:fixed",
+				"name": "#predicate"
 			},
-			"max": {
-				"type": "minecraft:score",
-				"target": {
-					"type": "minecraft:fixed",
-					"name": "#predicate"
-				},
-				"score": "golf_ball.id"
-			}
+			"score": "golf_ball.id"
 		}
 	}
 }
